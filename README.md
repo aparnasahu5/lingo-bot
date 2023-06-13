@@ -1,3 +1,4 @@
+#lingo bot
 Translation is necessary for the spreading of new information, knowledge, and ideas
 across the world. It is absolutely necessary to achieve effective communication
 between different cultures. In the process of spreading new information, translation is
@@ -74,25 +75,32 @@ deep_translator to import the google_translator api for the translation process
 
 Implementation:
 We have 17 languages and their corresponding unique words are shown below:
+![image](https://github.com/aparnasahu5/lingo-bot/assets/95071662/0a5e991c-bd09-4fe8-91c2-292793608a63)
 
 
 The accuracy found out while predicting the languages is found to be 97.4855%
+![image](https://github.com/aparnasahu5/lingo-bot/assets/95071662/7f458b30-2211-4ac1-a432-75c2c1ef1a4d)
+
 
 The confusion matrix depicted below provides information on how the languages are
 compared as well as the degree of similarity between them.
 For example, when compared to any other language, the characters in the English language
 are the most similar to those in English, followed by Italian and Portuguese.
+![image](https://github.com/aparnasahu5/lingo-bot/assets/95071662/8977ae08-89b7-49d7-aca0-0e493fa83c7f)
 
 
 The confusion matrix has been mapped into a heat map using the spectral colormap, with the
 block with the highest similarity to a language being marked with a shade of blue ((3,3),253)
 and the block with the least similarity to a language being marked with a shade of dark red.
 (0)
-
+![image](https://github.com/aparnasahu5/lingo-bot/assets/95071662/2703f2c8-2fe3-4bce-9ed1-7f303cecf2cb)
 
 
 The classification report is given here, from which we can learn about the precision, recall,
 f1-score and its accompanying macro average, weighted average, support value, and total
 accuracy. As a result, we may deduce that 20 percent of the dataset (20% of 10,337 records =
 2,068) has been used as the test set entries.
+![image](https://github.com/aparnasahu5/lingo-bot/assets/95071662/c37a3b64-f807-4414-9843-cef88293fb9f)
+
+![image](https://github.com/aparnasahu5/lingo-bot/assets/95071662/7fbbcdc3-78ed-4893-8006-7be027bf03b6)
 
