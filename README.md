@@ -1,79 +1,42 @@
 #lingo bot
-Translation is necessary for the spreading of new information, knowledge, and ideas
-across the world. It is absolutely necessary to achieve effective communication
-between different cultures. In the process of spreading new information, translation is
-something that can change history. It is the only medium by which certain people can
-know different works that will expand their knowledge of the world.
-For this reason, we decided to build a language translator and also a detector with
-which the user can detect and translate their desired language. With our project, it can
-be implemented in areas like chat apps where two people can communicate with each
-other using their native languages. We can also use them for multiplayer games where
-players from different countries will be able to chat with each other using their native
-language for better strategic decisions on how to beat the other players in the game.
-Our project has a wide array of applications it can be embedded into.
+Lingo Bot
+Introduction
+Translation plays a crucial role in spreading new information, knowledge, and ideas worldwide. It enables effective communication among different cultures, shaping history and expanding people's understanding of the world. To facilitate seamless communication, we have developed the Lingo Bot, a language translator and detector. This project aims to bridge language barriers in various domains such as chat apps and multiplayer games, enabling users to interact in their native languages for better strategic decision-making.
 
-Existing Systems:
-With advancements in communications and different dialects, it is common to be lost in
-translation. When people aren’t able to understand each other, it leads to miscommunication,
-irritability and the inability to share important information if needed. As social beings, it’s a
-lot of take in. Trying to go for a universal language effectively results in the loss of culture.
-Current systems like Google Translate or Duolingo are useful in detecting and translating
-global languages. By just researching a bit on the existing systems, we were able to see that
-most systems used NLTK for their implementation.[1] Another project followed the
-Recurrent neural network while using the Keras library.[2] One project attempted to identify
-language from very short strings by using LID networking. [3] Another project that used
-NLTK for english-to-local language.
-In this project, we have focused on building a language detector and translator. This project
-will combine global as well as Indian regional languages. This is done without using the
-NLTK library and with the use of the MultiNominalNB model.
+Existing Systems
+Despite the availability of translation systems like Google Translate and Duolingo, challenges still exist in language complexity and dialects. Miscommunication, frustration, and the inability to accurately share important information are common issues. Our research revealed that many existing systems rely on the Natural Language Toolkit (NLTK) library [1] for their implementation. Other projects have explored the use of Recurrent Neural Networks (RNN) with the Keras library [2]. There was also a project that attempted language identification from short strings using LID networking [3]. However, our project focuses on developing a language detector and translator that combines global and Indian regional languages without relying on the NLTK library.
 
+Drawbacks of Existing Systems
+During our analysis of existing systems, we identified several drawbacks:
 
+RNN models were slow due to the scraping process, resulting in decreased efficiency.
+NLTK-based projects exhibited lower accuracy in language detection and translation.
+The language support models (LSMs) used in the LID project were shallow, simple, and outdated.
+Some projects focused only on English and a few additional languages, limiting their language coverage and overall accuracy.
+Module-Wise Description
+Our project utilizes the following tools and libraries:
 
-Drawbacks of the existing systems:
-The drawback for the RNN model was the slowness because of the scraping. While the
-NLTK project was observed to have low accuracy. In the LID project, the LSM systems were
-shallow, simple and outdated. The final project that we reviewed had only used English and
-Efik because of which the accuracy in the training and testing was high.
+CountVectorizer tool (from scikit-learn library): This tool breaks down the input text into words and converts them into vectors based on their frequency.
+LabelEncoder tool (from scikit-learn library): This tool encodes categorical features, such as language labels, into numeric values for unique identification.
+train_test_split tool (from scikit-learn library): This tool splits the dataset into random train and test subsets, with a test size of 20% and a train size of 80%.
+MultiNomialNB model (from scikit-learn library): This model, suitable for classification with discrete features, is chosen for language detection and works in conjunction with the CountVectorizer tool.
+sklearn.metrics library: This library provides functions for calculating accuracy scores, generating confusion matrices, and producing classification reports.
+Design
+Dataset Used
+We utilized the Language_Detection dataset obtained from Kaggle, comprising 15+ languages and over 10,000 entries.
 
-Module Wise Description:
-This program is constructed with the use of:
-• CountVectorizer tool from the scikit-learn library to break down the given text into
-words and then modify it into vectors on the basis of its frequency.
-• LabelEncoder tool from the sklearn library is used to encode the levels of categorical
-features into numeric values i.e. in this project to give unique records in the language
-column and count of its corresponding records from the text column.
-• train_test_split tool from the sklearn library split arrays or matrices into random train
-and test subsets
-• test_size has been initialized as 0.20 ( size of the test set is 20% and the train set is 80%
-of the Lang_new_version_2.0 dataset)
-• The model chosen for this project is MultiNomialNB from the sklearn.naive_bayes
-library ,The multinomial Naive Bayes classifier is suitable for classification with
-discrete features (e.g., word counts for text classification) which makes it an apt
-combination with the CountVectorizer tool.
-• The accuracy score, confusion matrix and classification report has been classified from
-the sklearn.metrics library
+Tools Used
+Our project employs the following tools and libraries:
 
-
-
-Design:
-
-Dataset used:
-The dataset used for this project, Language_Detection, comprises 15+ languages and
-comprises 10,000+ entries. This dataset was obtained from kaggle.
-
-Tools used:
-1. Google Colaboratory Notebook
-2. Excel for the dataset
-3. pandas for data manipulation and analysis.
-4. numpy for adding support for large, multi-dimensional arrays and matrices, along
-with a large collection of high-level mathematical functions to operate on these
-arrays.
-5. re for using regular expression functions
-6. seaborn and matplotlib for drawing attractive and informative statistical graphics.
-deep_translator to import the google_translator api for the translation process
-
-
-Implementation:
+Google Colaboratory Notebook: This platform is used for development and execution of the project.
+Excel: The dataset is managed and manipulated using Excel for data preprocessing.
+pandas: This library is utilized for efficient data manipulation and analysis.
+NumPy: It provides support for handling large, multi-dimensional arrays and performs various mathematical functions.
+re: Regular expression functions are used for text preprocessing and cleaning.
+seaborn and matplotlib: These libraries are used to create visually appealing statistical graphics.
+deep_translator: We incorporated the google_translator API through the deep_translator package for the translation process.
+Implementation
+The implementation of our project involved training the model on a dataset containing 17 languages. The unique words associated with each language were extracted for prediction. The accuracy achieved in language prediction was found to be high.
 We have 17 languages and their corresponding unique words are shown below:
 ![image](https://github.com/aparnasahu5/lingo-bot/assets/95071662/0a5e991c-bd09-4fe8-91c2-292793608a63)
 
